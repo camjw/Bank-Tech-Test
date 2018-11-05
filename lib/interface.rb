@@ -3,7 +3,6 @@
 require_relative 'transaction_history'
 require_relative 'printer'
 
-
 # Interface class to interact with user
 class Interface
   INVALID_TYPE_ERROR = "This method can only take 'deposit' and 'withdrawal'"\
@@ -22,7 +21,7 @@ class Interface
   def display_statement
     transactions = @history.transactions
     @printer.display_statement(transactions)
-  end 
+  end
 
   private
 

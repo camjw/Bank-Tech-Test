@@ -3,8 +3,9 @@
 require 'interface'
 
 RSpec.describe Interface do
-  let(:mock_history) do double :mock_history, store_transaction: nil,
-    transactions: ['01/01/1994', 100.0, 'deposit']
+  let(:mock_history) do
+    double :mock_history, store_transaction: nil,
+                          transactions: ['01/01/1994', 100.0, 'deposit']
   end
   let(:mock_printer) { double :mock_printer, display_statement: nil }
 
