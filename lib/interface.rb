@@ -6,7 +6,7 @@ require_relative 'helpers/interface/error_helper'
 
 # Interface class to interact with user
 class Interface
-  include InterfaceErrorHelpers
+  include InterfaceErrorHelper
 
   def initialize(history: TransactionHistory.new, printer: Printer.new)
     @history = history

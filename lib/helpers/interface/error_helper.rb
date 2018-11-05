@@ -3,7 +3,7 @@
 require 'date'
 
 # Error handling helpers for the Interface class
-module InterfaceErrorHelpers
+module InterfaceErrorHelper
   INVALID_DATE_ERROR = 'This method can only take strings of the form '\
     " 'dd/mm/yyyy' as a first parameter"
   INVALID_AMOUNT_ERROR = 'This method can only take numbers with two decimal '\

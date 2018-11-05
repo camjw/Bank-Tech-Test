@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Helper methods to append blanace to transactions
 module BalanceCalculatorTransactionHelper
   def append_balances(transactions)
     valid_transactions?(transactions)
@@ -14,4 +17,4 @@ module BalanceCalculatorTransactionHelper
       tran << balance
     end
   end
-end 
+end
