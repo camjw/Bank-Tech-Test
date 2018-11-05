@@ -11,4 +11,8 @@ class Interface
   def deposit(date, amount)
     @history.store_transaction([date, amount, 'deposit'])
   end
+
+  def withdrawal(date, amount)
+    @history.store_transaction([date, amount, 'withdrawal'])
+  end
 end
