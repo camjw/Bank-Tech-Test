@@ -8,14 +8,14 @@ module InterfaceErrorHelpers
     'places as a first parameter'
   INVALID_TYPE_ERROR = "This method can only take 'deposit' and 'withdrawal'"\
     ' as a third parameter'
-
-  private
-
+  
   def check_validity(date, amount, type)
     check_for_valid_date(date)
     check_for_valid_amount(amount)
     check_for_valid_type(type)
   end
+
+  private
 
   def check_for_valid_date(date)
     raise INVALID_DATE_ERROR unless valid_transaction_date?(date)
