@@ -12,8 +12,8 @@ RSpec.describe Printer do
       ]
       expected_statement = "date || credit || debit || balance\n"\
         "03/01/1994 || 300.00 || || 250.00\n"\
-        "02/01/1994 || || 150.00 || -50.00 \n"\
-        '01/01/1994 || 100.00 || || 100.00'
+        "02/01/1994 || || 150.00 || -50.00\n"\
+        "01/01/1994 || 100.00 || || 100.00\n"
       expect { subject.display_statement(transactions) }.to output(
         expected_statement
       ).to_stdout

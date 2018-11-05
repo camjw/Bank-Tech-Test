@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative 'balance_calculator'
 
 # Class to print the bank statements to the console
@@ -10,7 +11,8 @@ class Printer
   end
 
   def display_statement(transactions)
-    print parse_transactions(transactions)
+    puts STATEMENT_HEADER
+    puts parse_transactions(transactions)
   end
 
   private
@@ -19,16 +21,15 @@ class Printer
     transactions.sort! { |first, second| second[0] <=> first[0] }
   end
 
-  def prettify_transaction(transaction)
-    middle_section = ['', transaction[1]]
-    middle_section.reverse! if transaction[2] == 'credit'
-    return (transaction[0] + middle_section + transaction[3]).join(' ||')
+  def prettify_transaction(trans)
+    middle_cols = ['', format('%.2f', trans[1]) + ' ']
+    middle_cols.reverse! if trans[2] == 'deposit'
+    output_row = [trans[0] + ' '] + middle_cols + [format('%.2f', trans[3])]
+    output_row.join('|| ')
   end
 
   def prettify_all_transactions(transactions)
-    transactions.each do |transaction|
-      transaction = prettify_transaction(transaction)
-    end
+    transactions.map { |transaction| prettify_transaction(transaction) }
   end
 
   def parse_transactions(transactions)
