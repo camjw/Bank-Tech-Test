@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'date'
+
 # Error handling helpers for the Interface class
 module InterfaceErrorHelpers
   INVALID_DATE_ERROR = 'This method can only take strings of the form '\
@@ -32,14 +34,14 @@ module InterfaceErrorHelpers
   def valid_transaction_date?(date)
     begin
       day, month, year = date.split('/')
-      Date.valid_date?(year.to_i, month.to_i, day.to_i)
+      return Date.valid_date?(year.to_i, month.to_i, day.to_i)
     rescue
-      false
+      return false
     end
   end
 
   def valid_transaction_amount?(amount)
-    amount == (amount * 100).to_i / 100
+    amount == (amount * 100).to_i / 100.0
   end
 
   def valid_transaction_type?(type)
