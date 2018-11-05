@@ -15,3 +15,11 @@ RSpec.configure do |config|
   end
   config.shared_context_metadata_behavior = :apply_to_host_groups
 end
+
+require_relative 'helpers/balance_calculator_error_helper'
+require_relative 'helpers/interface_error_helper'
+
+class Helper
+  include BalanceCalculatorErrorHelper
+  include InterfaceErrorHelpers
+end 
