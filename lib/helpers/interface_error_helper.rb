@@ -32,12 +32,10 @@ module InterfaceErrorHelpers
   end
 
   def valid_transaction_date?(date)
-    begin
-      day, month, year = date.split('/')
-      return Date.valid_date?(year.to_i, month.to_i, day.to_i)
-    rescue
-      return false
-    end
+    day, month, year = date.split('/')
+    Date.valid_date?(year.to_i, month.to_i, day.to_i)
+  rescue StandardError
+    false
   end
 
   def valid_transaction_amount?(amount)
