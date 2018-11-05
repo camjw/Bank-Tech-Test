@@ -6,7 +6,7 @@ RSpec.describe InterfaceErrorHelpers do
   describe '#check_validity' do
     context 'when called with an incorrect date' do
       it 'raises a date error' do
-        expect { subject.check_validity(100.0, 100.0, 'deposit') }.to(
+        expect { subject.check_validity(100.0, 100.10, 'deposit') }.to(
           raise_error 'This method can only take strings of the form '\
           " 'dd/mm/yyyy' as a first parameter"
         )
@@ -22,7 +22,7 @@ RSpec.describe InterfaceErrorHelpers do
     end
     context 'when called with an incorrect transaction type' do
       it 'raises a transaction type error' do
-        expect { subject.check_validity('01/01/1994', 100.0, 'error') }.to(
+        expect { subject.check_validity('01/01/1994', 100.10, 'error') }.to(
           raise_error "This method can only take 'deposit' and 'withdrawal' as"\
           ' a third parameter'
         )
