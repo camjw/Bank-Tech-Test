@@ -1,0 +1,19 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/Cameron/Projects/DiodeProjects/TechTests/BankTest/spec/transaction_history_spec.rb": [
+        1,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1541416509
+  }
+}
