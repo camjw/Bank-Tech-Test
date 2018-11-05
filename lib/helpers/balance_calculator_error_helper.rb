@@ -5,6 +5,10 @@ module BalanceCalculatorErrorHelper
   UNORDERED_LIST_ERROR = 'Transactions can only have balances appended when '\
     'they are in reverse chronological order'
 
+  def valid_transactions?(transactions)
+    raise UNORDERED_LIST_ERROR unless transactions_ordered?(transactions)
+  end
+
   private
 
   def transactions_ordered?(transactions)

@@ -28,5 +28,5 @@ RSpec.describe InterfaceErrorHelpers do
         )
       end
     end
-  end 
+  end
 end

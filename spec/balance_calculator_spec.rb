@@ -20,18 +20,5 @@ RSpec.describe BalanceCalculator do
         expect(transactions).to eq expected_transactions
       end
     end
-    context 'when the transactions are not in order' do
-      it 'raises an error' do
-        transactions = [
-          ['02/01/1994', 100.0, 'deposit'],
-          ['03/01/1994', 150.0, 'withdrawal'],
-          ['01/01/1994', 300.0, 'deposit']
-        ]
-        expect { subject.append_balances(transactions) }.to raise_error(
-          'Transactions can only have balances appended when they are in '\
-          'reverse chronological order'
-        )
-      end
-    end
   end
 end

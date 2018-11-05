@@ -7,7 +7,7 @@ class BalanceCalculator
   include BalanceCalculatorErrorHelper
 
   def append_balances(transactions)
-    raise UNORDERED_LIST_ERROR unless transactions_ordered?(transactions)
+    valid_transactions?(transactions)
 
     update_transactions(transactions)
   end
