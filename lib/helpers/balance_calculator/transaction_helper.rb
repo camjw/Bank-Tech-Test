@@ -13,7 +13,7 @@ module BalanceCalculatorTransactionHelper
   def update_transactions(transactions)
     balance = 0
     transactions.reverse_each do |tran|
-      tran[2] == 'deposit' ? balance += tran[1] : balance -= tran[1]
+      balance += tran[1] * (tran[2] == 'deposit' ? 1 : -1)
       tran << balance
     end
   end
