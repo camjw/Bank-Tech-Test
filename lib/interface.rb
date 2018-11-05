@@ -8,11 +8,12 @@ class Interface
     @history = history
   end
 
-  def deposit(date, amount)
-    @history.store_transaction([date, amount, 'deposit'])
+  def transaction(date, amount, type)
   end
 
-  def withdrawal(date, amount)
-    @history.store_transaction([date, amount, 'withdrawal'])
-  end
+  private
+
+  def valid_transaction_type?(type)
+    ['deposit', 'withdrawal'].include?(type)
+  end 
 end
