@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Helper methods to help display the statements
-module PrinterOutputHelper
+module Helpers::Printer
   STATEMENT_HEADER = "date || credit || debit || balance\n"
 
   private

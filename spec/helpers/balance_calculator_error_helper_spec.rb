@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe BalanceCalculatorErrorHelper do
+RSpec.describe Helpers::BalanceCalculator::Errors do
   subject { Helper.new }
 
   describe '#valid_transactions?' do

@@ -5,7 +5,7 @@ require_relative 'helpers/printer/output_helper'
 
 # Class to print the bank statements to the console
 class Printer
-  include PrinterOutputHelper
+  include Helpers::Printer::Outputs
 
   def display_statement(transactions)
     puts STATEMENT_HEADER

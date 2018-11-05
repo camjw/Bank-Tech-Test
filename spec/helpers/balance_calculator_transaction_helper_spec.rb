@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe BalanceCalculatorTransactionHelper do
+RSpec.describe Helpers::BalanceCalculator::Transactions do
   subject { Helper.new }
   describe '#append_balances' do
     context 'when the transactions are in reverse chronological order' do

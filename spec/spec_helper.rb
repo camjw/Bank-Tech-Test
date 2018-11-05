@@ -23,8 +23,8 @@ require_relative '../lib/helpers/printer/output_helper'
 
 # Helper class to make testing helper modules easier
 class Helper
-  include BalanceCalculatorErrorHelper
-  include BalanceCalculatorTransactionHelper
-  include InterfaceErrorHelper
-  include PrinterOutputHelper
+  include Helpers::BalanceCalculator::Errors
+  include Helpers::BalanceCalculator::Transactions
+  include Helpers::Interface::Errors
+  include Helpers::Printer::Outputs
 end

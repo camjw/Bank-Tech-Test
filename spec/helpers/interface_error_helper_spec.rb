@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe InterfaceErrorHelper do
+RSpec.describe Helpers::Interface::Errors do
   subject { Helper.new }
 
   describe '#check_validity' do

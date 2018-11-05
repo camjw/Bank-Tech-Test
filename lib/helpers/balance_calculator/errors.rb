@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Error handling helpers for the BalanceCalculator class
-module BalanceCalculatorErrorHelper
+module Helpers::BalanceCalculator::Errors
   UNORDERED_LIST_ERROR = 'Transactions can only have balances appended when '\
     'they are in reverse chronological order'
 
