@@ -35,7 +35,7 @@ class Interface
   end
 
   def valid_transaction_amount?(amount)
-    amount == ((amount * 100).to_i) / 100
+    amount == (amount * 100).to_i / 100
   end
 
   def valid_transaction_type?(type)
