@@ -47,7 +47,12 @@ $ #=> 13/01/2012 || 2000.00 || || 3000.00
 $ #=> 10/01/2012 || 1000.00 || || 1000.00
 ```
 
+The `transaction` method takes three parameters, date, amount and transaction type. These must be in the following formats:
+- date: string in the format `dd/mm/yyyy`
+- amount: integer or float with no more than two decimal places
+- type: either `'deposit'` or `'withdraw'`
 
+The `display_statement` method takes no parameters.
 ## User Stories
 
 From the brief, I decided the following user stories captured the intended product:
