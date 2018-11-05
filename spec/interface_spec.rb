@@ -3,8 +3,14 @@
 require 'interface'
 
 RSpec.describe Interface do
-  let(:mock_transaction) { double :mock_transaction, store_transaction: nil }
-  subject { described_class.new(history: mock_transaction) }
+  let(:mock_transaction) do double :mock_transaction, store_transaction: nil,
+    transactions: ['01/01/1994', 100.0, 'deposit']
+  end
+  let(:mock_printer) { double :mock_printer, display_statement: nil }
+
+  subject do
+    described_class.new(history: mock_transaction, printer: mock_printer)
+  end
 
   describe '#transaction' do
     context 'when called with deposit' do
@@ -28,6 +34,18 @@ RSpec.describe Interface do
           ' third parameters'
         )
       end
+    end
+  end
+
+  describe '#display_statement' do
+    it 'asks the TransactionHistory for the previous transactions' do
+      subject.display_statement
+      expect(:mock_printer).to have_received(:transactions)
+    end
+    it 'instructs the printer to display a statement' do
+      subject.display_statement
+      data = ['01/01/1994', 100.0, 'deposit']
+      expect(:mock_printer).to have_received(:display_statement).with(data)
     end
   end
 end
