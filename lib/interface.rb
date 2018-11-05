@@ -16,7 +16,7 @@ class Interface
   private
 
   def valid_transaction_type?(type)
-    ['deposit', 'withdrawal'].include?(type)
+    %w[deposit withdrawal].include?(type)
   end
 
   def check_for_valid_type(type)

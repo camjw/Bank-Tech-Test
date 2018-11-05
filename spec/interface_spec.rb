@@ -23,7 +23,10 @@ RSpec.describe Interface do
     end
     context 'when called with a different string' do
       it 'raises an error' do
-        expect { subject.transaction('01/01/1994', 100.0, 'error') }.to raise_error "This method can only take 'deposit' and 'withdrawal' as third parameters"
+        expect { subject.transaction('01/01/1994', 100.0, 'error') }.to(
+          raise_error "This method can only take 'deposit' and 'withdrawal' as"\
+          ' third parameters'
+        )
       end
     end
   end
