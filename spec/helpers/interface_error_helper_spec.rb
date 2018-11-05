@@ -23,7 +23,7 @@ RSpec.describe InterfaceErrorHelper do
     context 'when called with an incorrect transaction type' do
       it 'raises a transaction type error' do
         expect { subject.check_validity('01/01/1994', 100.10, 'error') }.to(
-          raise_error "This method can only take 'deposit' and 'withdrawal' as"\
+          raise_error "This method can only take 'deposit' and 'withdraw' as"\
           ' a third parameter'
         )
       end

@@ -8,7 +8,7 @@ module InterfaceErrorHelper
     " 'dd/mm/yyyy' as a first parameter"
   INVALID_AMOUNT_ERROR = 'This method can only take numbers with two decimal '\
     'places as a first parameter'
-  INVALID_TYPE_ERROR = "This method can only take 'deposit' and 'withdrawal'"\
+  INVALID_TYPE_ERROR = "This method can only take 'deposit' and 'withdraw'"\
     ' as a third parameter'
 
   def check_validity(date, amount, type)
@@ -43,6 +43,6 @@ module InterfaceErrorHelper
   end
 
   def valid_transaction_type?(type)
-    %w[deposit withdrawal].include?(type)
+    %w[deposit withdraw].include?(type)
   end
 end

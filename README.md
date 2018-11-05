@@ -35,7 +35,7 @@ Now, `account` is a new bank account instance which has methods `transaction` an
 ```ruby
 $ account.transaction('10/01/2012', 1000.00, 'deposit')
 $ account.transaction('13/01/2012', 2000.00, 'deposit')
-$ account.transaction('14/01/2012', 500.00, 'withdrawal')
+$ account.transaction('14/01/2012', 500.00, 'withdraw')
 ```
 Finally, we can see the accounts statement:
 
@@ -109,7 +109,7 @@ or
 ```
 date || amount_to_two_decimal_places || || balance
 ```
-depending on whether the transaction is a withdrawal or a deposit respectively.
+depending on whether the transaction is a withdraw or a deposit respectively.
 ### Error handling
 
 A large part of this project, for me, was error handling and input sanitation. The user has to enter dates in the format `dd/mm/yyyy` to the transaction method. This is handled in the `InterfaceErrorHelper` module by the following methods:
