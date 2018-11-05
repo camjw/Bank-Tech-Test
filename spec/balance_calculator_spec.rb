@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'balance_calculator'
 
 RSpec.describe BalanceCalculator do
