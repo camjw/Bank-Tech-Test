@@ -2,7 +2,7 @@
 
 require_relative 'transaction_history'
 require_relative 'printer'
-require_relative 'interface_error_helpers'
+require_relative 'helpers/interface_error_helpers'
 
 # Interface class to interact with user
 class Interface

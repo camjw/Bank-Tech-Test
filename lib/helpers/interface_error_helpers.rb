@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Error handling helpers for the Interface class
 module InterfaceErrorHelpers
   INVALID_DATE_ERROR = 'This method can only take strings of the form '\
     " 'dd/mm/yyyy' as a first parameter"
@@ -13,7 +16,7 @@ module InterfaceErrorHelpers
     check_for_valid_amount(amount)
     check_for_valid_type(type)
   end
-  
+
   def check_for_valid_date(date)
     raise INVALID_DATE_ERROR unless valid_transaction_date?(date)
   end
