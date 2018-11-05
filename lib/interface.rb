@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'transaction_history'
 
 # Interface class to interact with user
