@@ -28,11 +28,27 @@ RSpec.describe Interface do
         expect(mock_history).to have_received(:store_transaction).with(data)
       end
     end
-    context 'when called with a different string' do
+    context 'when called with an incorrect date' do
+      it 'raises an error' do
+        expect { subject.transaction('error', 100.0, 'deposit') }.to(
+          raise_error 'This method can only take strings of the form '\
+          " 'dd/mm/yyyy' as a first parameter"
+        )
+      end
+    end
+    context 'when called with an incorrect amount' do
+      it 'raises an error' do
+        expect { subject.transaction('01/01/1994', 'error', 'deposit') }.to(
+          raise_error 'This method can only take numbers with two decimal '\
+            'places as a first parameter'
+        )
+      end
+    end
+    context 'when called with an incorrect type' do
       it 'raises an error' do
         expect { subject.transaction('01/01/1994', 100.0, 'error') }.to(
           raise_error "This method can only take 'deposit' and 'withdrawal' as"\
-          ' third parameters'
+          ' a third parameter'
         )
       end
     end
