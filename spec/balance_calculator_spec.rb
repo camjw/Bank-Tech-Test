@@ -28,7 +28,7 @@ RSpec.describe BalanceCalculator do
           ['01/01/1994', 300.0, 'deposit']
         ]
         expect { subject.append_balances(transactions) }.to raise_error(
-          'Transactions can only have balances appended when they are in'\
+          'Transactions can only have balances appended when they are in '\
           'reverse chronological order'
         )
       end

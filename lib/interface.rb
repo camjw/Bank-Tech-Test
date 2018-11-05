@@ -4,6 +4,9 @@ require_relative 'transaction_history'
 
 # Interface class to interact with user
 class Interface
+  INVALID_TYPE_ERROR = "This method can only take 'deposit' and 'withdrawal'"\
+    ' as third parameters'
+
   def initialize(history: TransactionHistory.new)
     @history = history
   end
@@ -20,8 +23,6 @@ class Interface
   end
 
   def check_for_valid_type(type)
-    error_message = "This method can only take 'deposit' and 'withdrawal' as "\
-      'third parameters'
-    raise error_message unless valid_transaction_type?(type)
+    raise INVALID_TYPE_ERROR unless valid_transaction_type?(type)
   end
 end
