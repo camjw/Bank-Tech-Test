@@ -19,6 +19,7 @@ end
 require_relative '../lib/helpers/balance_calculator_error_helper'
 require_relative '../lib/helpers/interface_error_helper'
 
+# Helper class to make testing helper modules easier
 class Helper
   include BalanceCalculatorErrorHelper
   include InterfaceErrorHelpers
