@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'balance_calculator'
-require_relative 'helpers/printer/output_helper'
+require_relative 'helpers/printer/outputs'
 
 # Class to print the bank statements to the console
 class Printer

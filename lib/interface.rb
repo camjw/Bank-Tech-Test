@@ -2,11 +2,11 @@
 
 require_relative 'transaction_history'
 require_relative 'printer'
-require_relative 'helpers/interface/error_helper'
+require_relative 'helpers/interface/errors'
 
 # Interface class to interact with user
 class Interface
-  include Helpers::Interface::Error
+  include Helpers::Interface::Errors
 
   def initialize(history: TransactionHistory.new, printer: Printer.new)
     @history = history

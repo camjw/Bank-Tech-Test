@@ -5,5 +5,6 @@ require_relative 'helpers/balance_calculator/transactions'
 
 # Class calculates and appends the balances to a list of transactions
 class BalanceCalculator
-  include Helpers::BalanceCalculator
+  include Helpers::BalanceCalculator::Errors
+  include Helpers::BalanceCalculator::Transactions
 end
