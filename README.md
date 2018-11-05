@@ -1,4 +1,10 @@
 # Bank Tech Test
+A Ruby implementation of a simple banking app allowing withdrawals, deposits and the printing of bank statements.
+
+[![Build Status](https://travis-ci.com/camjw/Bank-Tech-Test.svg?branch=master)](https://travis-ci.com/camjw/Bank-Tech-Test)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4ce38758cc63ae42e104/maintainability)](https://codeclimate.com/github/camjw/Bank-Tech-Test/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/4ce38758cc63ae42e104/test_coverage)](https://codeclimate.com/github/camjw/Bank-Tech-Test/test_coverage)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## User Stories
 
