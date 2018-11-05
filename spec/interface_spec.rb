@@ -13,4 +13,12 @@ RSpec.describe Interface do
       expect(mock_transaction).to have_received(:store_transaction).with(data)
     end
   end
+
+  describe '#withdrawal' do
+    it 'instructs the TransactionHistory to store a withdrawal' do
+      subject.deposit('01/01/1994', 100.0)
+      data = ['01/01/1994', 100.0, 'withdrawal']
+      expect(mock_transaction).to have_received(:store_transaction).with(data)
+    end
+  end
 end
