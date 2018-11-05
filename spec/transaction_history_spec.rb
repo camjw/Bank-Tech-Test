@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'transaction_history'
 
 RSpec.describe TransactionHistory do
