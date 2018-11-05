@@ -8,6 +8,5 @@ class BalanceCalculator
       tran[2] == 'deposit' ? balance += tran[1] : balance -= tran[1]
       tran << balance
     end
-    transactions
   end
 end
