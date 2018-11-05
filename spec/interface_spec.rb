@@ -1,13 +1,11 @@
+# frozen_string_literal: true
+
 require 'interface'
 
 RSpec.describe Interface do
-  let(:mock_transaction) { double(:mock_transaction) }
+  let(:mock_transaction) { double :mock_transaction, :store_transaction }
   let(subject) { described_class.new(history: mock_transaction) }
 
-  before(:all) do
-    allow(:mock_transaction).to receive(:store_transaction)
-  end
-  
   describe '#deposit' do
     it 'instructs the TransactionHistory to store a deposit' do
       subject.deposit('01/01/1994', 100.0)
