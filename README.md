@@ -87,6 +87,10 @@ I decided that the balance specification did not include the following propertie
 
 ## Examples
 
+Since a lot of the methods I wrote initially belonged to classes but didn't actually rely on any instance variables I've refactored the app to include a series of helper modules.
+
+These can be found in the lib/helpers folder.
+
 ## Printing the bank statement
 Printing the bank statement was the most complex part to code as well as to specify. The `Interface#display_statement` queries the `TransactionHistory` class for a list of transactions and then directs the `Printer` to prettify and then print the transactions.
 
