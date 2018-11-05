@@ -6,7 +6,7 @@ RSpec.describe InterfaceErrorHelpers do
   describe '#check_validity' do
     context 'when called with an incorrect date' do
       it 'raises a date error' do
-        expect { subject.check_validity('error', 100.0, 'deposit') }.to(
+        expect { subject.check_validity(100.0, 100.0, 'deposit') }.to(
           raise_error 'This method can only take strings of the form '\
           " 'dd/mm/yyyy' as a first parameter"
         )
