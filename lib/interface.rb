@@ -9,11 +9,19 @@ class Interface
   end
 
   def transaction(date, amount, type)
+    check_for_valid_type(type)
+    @history.store_transaction([date, amount, type])
   end
 
   private
 
   def valid_transaction_type?(type)
     ['deposit', 'withdrawal'].include?(type)
-  end 
+  end
+
+  def check_for_valid_type(type)
+    error_message = "This method can only take 'deposit' and 'withdrawal' as "\
+      'third parameters'
+    raise error_message unless valid_transaction_type?(type)
+  end
 end
