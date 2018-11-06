@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'helpers/ledger'
-
 # A class to store all transactions made by the account
 class Ledger
-  include Helpers::Ledger
-
   def initialize
     @transactions = []
   end
@@ -16,5 +12,19 @@ class Ledger
 
   def transaction_history
     add_balances(sort_by_date(@transactions))
+  end
+
+  def add_balances(transactions)
+    balance = 0
+    transactions.reverse_each do |tran|
+      balance += tran[1] * (tran[2] == 'deposit' ? 1 : -1)
+      tran << balance
+    end
+  end
+
+  private
+
+  def sort_by_date(transactions)
+    transactions.sort! { |first, second| second[0] <=> first[0] }
   end
 end

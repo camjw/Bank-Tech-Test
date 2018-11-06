@@ -17,12 +17,8 @@ RSpec.configure do |config|
 end
 
 require_relative '../lib/helpers/interface'
-require_relative '../lib/helpers/ledger'
-require_relative '../lib/helpers/printer'
 
 # Helper class to make testing helper modules easier
 class Helper
   include Helpers::Interface
-  include Helpers::Printer
-  include Helpers::Ledger
 end
