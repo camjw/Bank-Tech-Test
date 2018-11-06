@@ -92,14 +92,12 @@ I decided that the balance specification did not include the following propertie
 
 ## Examples
 
-Since a lot of the methods I wrote initially belonged to classes but didn't actually rely on any instance variables I've refactored the app to include a series of helper modules.
-
-These can be found in the lib/helpers folder.
+Initially, since a lot of the methods I wrote belonged to classes but didn't rely on any instance variables, the app included a series of helper modules. I later decided that this sacrificed readability so refactored the helper methods back into the classes.
 
 ## Printing the bank statement
 Printing the bank statement was the most complex part to code as well as to specify. The `Interface#display_statement` queries the `TransactionHistory` class for a list of transactions and then directs the `Printer` to prettify and then print the transactions.
 
-`Printer#prettify_transaction` is one of the longest methods in this repo:
+`Printer#prettify_transaction` was one of the longest methods in this repo:
 
 ```ruby
 def prettify_transaction(trans)
@@ -110,18 +108,29 @@ def prettify_transaction(trans)
 end
 ```
 
-It takes an array which looks like `[date, amount, type, final_balance]` and converts it to a string which looks either like
+But this has been refactored into the following much more readable functions:
+
+```ruby
+def prettify_transaction(transaction)
+  return prettify_deposit(transaction) if transaction[2] == 'deposit'
+
+  prettify_withdrawal(transaction)
+end
+
+def prettify_deposit(transaction)
+  "#{transaction[0]} || #{format('%.2f', transaction[1])} || ||"\
+    " #{format('%.2f', transaction[3])}"
+end
+
+def prettify_withdrawal(transaction)
+  "#{transaction[0]} || || #{format('%.2f', transaction[1])} ||"\
+    " #{format('%.2f', transaction[3])}"
+end
 ```
-date || || amount_to_two_decimal_places || balance
-```
-or
-```
-date || amount_to_two_decimal_places || || balance
-```
-depending on whether the transaction is a withdraw or a deposit respectively.
+
 ### Error handling
 
-A large part of this project, for me, was error handling and input sanitation. The user has to enter dates in the format `dd/mm/yyyy` to the transaction method. This is handled in the `InterfaceErrorHelper` module by the following methods:
+A large part of this project, for me, was error handling and input sanitation. The user has to enter dates in the format `dd/mm/yyyy` to the transaction method. This is handled in the `Interface` class by the following methods:
 
 ```ruby
 def check_for_valid_date(date)
@@ -138,7 +147,6 @@ end
 
 Similarly, there are error handling methods for the amount of money and transaction type passed to the `Interface#transaction` method.
 
-There is also a error handling helper module for the `Printer` class which makes sure that the array of transactions passed to the printer is in reverse chronological order.
 ## Contributing
 I would prefer not to receive contributions for this repo, thank you.
 
