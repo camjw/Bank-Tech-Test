@@ -2,7 +2,7 @@
 
 require_relative 'ledger'
 require_relative 'printer'
-require_relative 'helpers/interface/errors'
+require_relative 'helpers/interface'
 
 # Interface class to interact with user
 class Interface

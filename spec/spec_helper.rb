@@ -16,15 +16,13 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 end
 
-require_relative '../lib/helpers/balance_calculator/errors'
-require_relative '../lib/helpers/balance_calculator/transactions'
-require_relative '../lib/helpers/interface/errors'
-require_relative '../lib/helpers/printer/outputs'
+require_relative '../lib/helpers/interface'
+require_relative '../lib/helpers/ledger'
+require_relative '../lib/helpers/printer'
 
 # Helper class to make testing helper modules easier
 class Helper
-  include Helpers::BalanceCalculator::Errors
-  include Helpers::BalanceCalculator::Transactions
-  include Helpers::Interface::Errors
-  include Helpers::Printer::Outputs
+  include Helpers::Interface
+  include Helpers::Printer
+  include Helpers::Ledger
 end
