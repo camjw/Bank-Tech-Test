@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative 'helpers/ledger'
 
 # A class to store all transactions made by the account

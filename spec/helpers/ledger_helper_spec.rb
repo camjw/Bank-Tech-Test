@@ -2,7 +2,7 @@
 
 RSpec.describe Helpers::Ledger do
   subject { Helper.new }
-  describe '#append_balances' do
+  describe '#add_balances' do
     context 'when the transactions are in reverse chronological order' do
       it 'appends the running balance to a series of transactions' do
         transactions = [
@@ -15,7 +15,7 @@ RSpec.describe Helpers::Ledger do
           ['02/01/1994', 150.0, 'withdrawal', 150.00],
           ['01/01/1994', 300.0, 'deposit', 300.00]
         ]
-        subject.append_balances(transactions)
+        subject.add_balances(transactions)
         expect(transactions).to eq expected_transactions
       end
     end

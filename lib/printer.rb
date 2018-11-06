@@ -8,12 +8,6 @@ class Printer
 
   def display_statement(transactions)
     puts STATEMENT_HEADER
-    puts parse_transactions(transactions)
-  end
-
-  private
-
-  def parse_transactions(transactions)
-    prettify_all_transactions(transactions)
+    puts prettify_all_transactions(transactions)
   end
 end
