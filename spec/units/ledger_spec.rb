@@ -15,7 +15,7 @@ RSpec.describe Ledger do
     context 'when the transactions are in reverse chronological order' do
       it 'appends the running balance to a series of transactions' do
         subject.store_transaction(['03/01/1994', 100.0, 'deposit'])
-        expected_output = [["03/01/1994", 100.0, "deposit", 100.0]]
+        expected_output = [['03/01/1994', 100.0, 'deposit', 100.0]]
         expect(subject.transaction_history).to eq expected_output
       end
     end

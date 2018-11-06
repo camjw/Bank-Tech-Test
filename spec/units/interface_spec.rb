@@ -48,7 +48,7 @@ RSpec.describe Interface do
       end
     end
   end
-  
+
   describe '#display_statement' do
     it 'asks the TransactionHistory for the previous transactions' do
       subject.display_statement

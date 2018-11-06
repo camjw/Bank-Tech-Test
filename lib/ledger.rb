@@ -15,7 +15,7 @@ class Ledger
   end
 
   private
-  
+
   def add_balances(transactions)
     balance = 0
     transactions.reverse_each do |tran|
