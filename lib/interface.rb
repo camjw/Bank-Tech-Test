@@ -11,7 +11,7 @@ class Interface
     'places as a first parameter'
   INVALID_TYPE_ERROR = "This method can only take 'deposit' and 'withdraw' "\
     'as a third parameter'
-  
+
   def initialize(ledger: Ledger.new, printer: Printer.new)
     @ledger = ledger
     @printer = printer
