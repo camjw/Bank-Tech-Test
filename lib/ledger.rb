@@ -14,6 +14,8 @@ class Ledger
     add_balances(sort_by_date(@transactions))
   end
 
+  private
+  
   def add_balances(transactions)
     balance = 0
     transactions.reverse_each do |tran|
@@ -21,8 +23,6 @@ class Ledger
       tran << balance
     end
   end
-
-  private
 
   def sort_by_date(transactions)
     transactions.sort! { |first, second| second[0] <=> first[0] }
