@@ -22,18 +22,6 @@ RSpec.describe Interface do
     end
   end
 
-  describe '#display_statement' do
-    it 'asks the TransactionHistory for the previous transactions' do
-      subject.display_statement
-      expect(mock_ledger).to have_received(:transaction_history)
-    end
-    it 'instructs the printer to display a statement' do
-      subject.display_statement
-      data = ['01/01/1994', 100.0, 'deposit', 100.0]
-      expect(mock_printer).to have_received(:display_statement).with(data)
-    end
-  end
-
   describe '#check_validity' do
     context 'when called with an incorrect date' do
       it 'raises a date error' do
@@ -58,6 +46,18 @@ RSpec.describe Interface do
           ' a third parameter'
         )
       end
+    end
+  end
+  
+  describe '#display_statement' do
+    it 'asks the TransactionHistory for the previous transactions' do
+      subject.display_statement
+      expect(mock_ledger).to have_received(:transaction_history)
+    end
+    it 'instructs the printer to display a statement' do
+      subject.display_statement
+      data = ['01/01/1994', 100.0, 'deposit', 100.0]
+      expect(mock_printer).to have_received(:display_statement).with(data)
     end
   end
 end
