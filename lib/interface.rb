@@ -20,7 +20,6 @@ class Interface
 
   def display_statement
     transactions = @ledger.transaction_history
-    print transactions
     @printer.display_statement(transactions)
   end
 end
