@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
-require_relative 'transaction_history'
+require_relative 'ledger'
 require_relative 'printer'
 require_relative 'helpers/interface/errors'
 
 # Interface class to interact with user
 class Interface
-  include Helpers::Interface::Errors
+  include Helpers::Interface
 
-  def initialize(history: TransactionHistory.new, printer: Printer.new)
-    @history = history
+  def initialize(ledger: Ledger.new, printer: Printer.new)
+    @ledger = ledger
     @printer = printer
   end
 
   def transaction(date, amount, type)
     check_validity(date, amount, type)
-    @history.store_transaction([date, amount, type])
+    @ledger.store_transaction([date, amount, type])
   end
 
   def display_statement
-    transactions = @history.transactions
+    transactions = @ledger.transaction_history
     @printer.display_statement(transactions)
   end
 end
