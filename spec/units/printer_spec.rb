@@ -6,9 +6,9 @@ RSpec.describe Printer do
   describe '#display_statement' do
     it 'takes an array of transactions and puts the bank statement to stdout' do
       transactions = [
-        ['01/01/1994', 100.0, 'deposit'],
-        ['02/01/1994', 150.0, 'withdrawal'],
-        ['03/01/1994', 300.0, 'deposit']
+        ['03/01/1994', 300.0, 'deposit', 250.0],
+        ['02/01/1994', 150.0, 'withdrawal', -50.0],
+        ['01/01/1994', 100.0, 'deposit', 100.0]
       ]
       expected_statement = "date || credit || debit || balance\n"\
         "03/01/1994 || 300.00 || || 250.00\n"\
