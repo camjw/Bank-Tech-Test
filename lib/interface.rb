@@ -11,13 +11,7 @@ class Interface
     'places as a first parameter'
   INVALID_TYPE_ERROR = "This method can only take 'deposit' and 'withdraw' "\
     'as a third parameter'
-
-  def check_validity(date, amount, type)
-    check_for_valid_date(date)
-    check_for_valid_amount(amount)
-    check_for_valid_type(type)
-  end
-
+  
   def initialize(ledger: Ledger.new, printer: Printer.new)
     @ledger = ledger
     @printer = printer
@@ -26,6 +20,12 @@ class Interface
   def transaction(date, amount, type)
     check_validity(date, amount, type)
     @ledger.store_transaction([date, amount, type])
+  end
+
+  def check_validity(date, amount, type)
+    check_for_valid_date(date)
+    check_for_valid_amount(amount)
+    check_for_valid_type(type)
   end
 
   def display_statement
